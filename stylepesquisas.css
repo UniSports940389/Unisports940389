@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    margin: 5;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+  font-size: 100%;
+  background: #D8A6A3;
+
+}
+
+
+.cabeçalho{
+    display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+   padding: 24px;
+   }
+   
+   .cabeçalho-imagem{
+       height: 50px;
+       
+   }
+   
+   /* MENU */
+   nav.menu {
+       position: absolute;
+       left: 45px;
+       top: 50px;
+   }
+   .menu .menu-faketrigger {
+       position: absolute;
+       z-index: 1000;
+       width: 35px;
+       height: 35px;
+       opacity: 0;
+       cursor: pointer;
+   }
+   .menu .menu-lines {
+       position: absolute;
+       z-index: 999;
+       width: 35px;
+       height: 35px;
+   }
+   .menu .menu-lines span {
+       display: block;
+       width: 35px;
+       height: 5px;
+       margin-bottom: 10px;
+       background-color: #ab6c6e;
+       border-radius: 3px;
+       transition: all ease .3s;
+   }
+   .menu .menu-faketrigger:checked ~.menu-lines span {
+       background-color: #ab6c6e;
+   }
+   .menu .menu-faketrigger:checked ~.menu-lines span:nth-child(1) {
+       transform-origin: 0% 0%;
+       transform: rotate(45deg) scaleX(1.25);
+   }
+   .menu .menu-faketrigger:checked ~.menu-lines span:nth-child(2) {
+       opacity: 0;
+   }
+   .menu .menu-faketrigger:checked ~.menu-lines span:nth-child(3) {
+       transform-origin: 0% 100%;
+       transform: rotate(-45deg) scaleX(1.25);
+   }
+   .menu ul {
+       position: absolute;
+       z-index: 998;
+       left: -50px;
+       top: -85px;
+       width: 283px;
+       height: calc(250vh - 100px);
+       padding-top: 100px;
+       background-color: #D8A6A3;
+       margin-left: -300px;
+       transition: all ease .3s;
+       box-shadow: 0.5px 0.5px 2px 0.5px rgba(0, 0, 0, 0.15);
+   }
+   .menu .menu-faketrigger:checked ~ ul {
+       margin-left: 0;
+   }
+   .menu ul li {
+       padding: 10px 30px;
+   }
+   .menu ul li a {
+       position: relative;
+       font-family: 'Poppins', sans-serif;
+       text-decoration: none;
+       color: #fff1eb;
+       font-size: 30px;
+       left: 50px;
+       top: 30px;
+       transition: 0.3s;
+   }
+   .menu ul li a:hover {
+       color:  #74292F;
+   }
+   /*FIM DO MENU*/
+
+/*Card*/
+
+   .card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    background: #F7EEE0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 100px;
+}
+.card::before
+{
+    content:'';
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: #D8A6A3;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+.card:hover::before
+{
+    top:-70%;
+    transform: skewY(390deg);
+}
+.card::after
+{
+content: Uni-Sports;
+position: absolute;
+bottom: 0;
+left: 0;
+font-weight: 600;
+font-size: 8em;
+/*cor de fundo do cartão*/
+color: #fcefd9
+
+}
+.card .imgBx
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+}
+.card .imgBx img
+{
+max-width: 75%;
+transition: 0.5s;
+
+}
+.card:hover .imgBx img 
+{
+max-width: 50%;
+
+}
+.card .contentBx
+{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.card .contentBx h3
+{
+font-size: 18px;
+font-family: 'Poppins', sans-serif;
+color: #74292F;
+font-weight: 500;
+letter-spacing: 1px;
+}
+.card .contentBx .buy
+{
+font-family: 'Poppins', sans-serif;
+position:relative;
+top: 200px;
+opacity: 0px;
+padding: 10px 30px;
+margin-top: 15px;
+color: #D8A6A3;
+text-decoration: none;
+background: #74292F;
+border-radius: 30px;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: 0.5s;
+
+}
+.card:hover .contentBx .buy
+{
+    top: 0px;
+    opacity: 1px;
+}
+
+/*Fim do Card*/
+
+.banner
+{ 
+    margin-bottom: 100px;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    background-color: #ab6c6e;
+    background-size: cover;
+    height: 550px;
+}
+
+
+.banner .content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.banner .content h2
+{
+font-size: 5em;
+color:#fff1eb;
+margin-top: 100px;
+
+}
+.banner .content p {
+    margin-bottom: 10%;
+}
+
+
+/* Estilo padrão do sublinhado */
+.sublinhado {
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+/* Estilo do sublinhado quando o mouse passa sobre os títulos */
+.sublinhado:hover {
+    text-decoration: underline;
+    text-decoration-color: #74292F;
+    
+}
+
+.meuTitulo{
+    margin-left: 50px;
+}
+
+.rodabe{
+    padding: 50px;
+    border-top: 2px solid #74292F;
+}
+
+.rodabe-imagem{
+    height: 65px;
+    display: block ;
+    margin: 0 auto
+}
